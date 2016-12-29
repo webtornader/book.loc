@@ -56,7 +56,7 @@ class Examples extends CI_Controller {
 
 		$crud->set_table('writer');
 		$crud->set_subject('writer');		
-		$crud->set_relation_n_n('books', 'book_heading', 'book', 'heading_id', 'book_id', 'title');
+		$crud->set_relation_n_n('books', 'book_writer', 'book', 'writer_id', 'book_id', 'title');
 		$crud->display_as('fullname','Писатель');
 		$crud->display_as('books','Все книги автора');
 		$crud->fields('fullname','books');
@@ -72,7 +72,7 @@ class Examples extends CI_Controller {
 
 		$crud->set_table('heading');
 		$crud->set_subject('genre');		
-		$crud->set_relation_n_n('books', 'book_writer', 'book', 'writer_id', 'book_id', 'title');
+		$crud->set_relation_n_n('books', 'book_heading', 'book', 'heading_id', 'book_id', 'title');
 		$crud->display_as('name','Жанр, раздел');
 		$crud->display_as('books','Книги в этом жанре');
 		$crud->fields('name','books');
