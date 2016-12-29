@@ -60,7 +60,6 @@ class Examples extends CI_Controller {
 		$crud->display_as('fullname','Писатель');
 		$crud->display_as('books','Все книги автора');
 		$crud->fields('fullname','books');
-		$crud->add_action('Details', '/assets/grocery_crud/themes/flexigrid/css/images/magnifier.png', 'examples/details');
 
 		$output = $crud->render();
 
@@ -83,19 +82,6 @@ class Examples extends CI_Controller {
 		$this->_example_output($output);
 	}
 
-	// public function details()
-	// {
-		// $crud = new grocery_CRUD();
-
-		// $crud->set_table('category');
-		// $crud->set_subject('genre');		
-		// $crud->display_as('name','Жанр, раздел');
-		// $crud->fields('name');
-
-		// $output = $crud->render();
-
-		// $this->_example_output($output);
-	// }
 
 
 
