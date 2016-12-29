@@ -50,5 +50,53 @@ class Examples extends CI_Controller {
 	}
 
 
+	public function writers()
+	{
+		$crud = new grocery_CRUD();
+
+		$crud->set_table('writer');
+		$crud->set_subject('writer');		
+		$crud->set_relation_n_n('books', 'book_heading', 'book', 'heading_id', 'book_id', 'title');
+		$crud->display_as('fullname','Писатель');
+		$crud->display_as('books','Все книги автора');
+		$crud->fields('fullname','books');
+		$crud->add_action('Details', '/assets/grocery_crud/themes/flexigrid/css/images/magnifier.png', 'examples/details');
+
+		$output = $crud->render();
+
+		$this->_example_output($output);
+	}
+
+	public function genres()
+	{
+		$crud = new grocery_CRUD();
+
+		$crud->set_table('heading');
+		$crud->set_subject('genre');		
+		$crud->set_relation_n_n('books', 'book_writer', 'book', 'writer_id', 'book_id', 'title');
+		$crud->display_as('name','Жанр, раздел');
+		$crud->display_as('books','Книги в этом жанре');
+		$crud->fields('name','books');
+
+		$output = $crud->render();
+
+		$this->_example_output($output);
+	}
+
+	// public function details()
+	// {
+		// $crud = new grocery_CRUD();
+
+		// $crud->set_table('category');
+		// $crud->set_subject('genre');		
+		// $crud->display_as('name','Жанр, раздел');
+		// $crud->fields('name');
+
+		// $output = $crud->render();
+
+		// $this->_example_output($output);
+	// }
+
+
 
 }

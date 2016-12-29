@@ -13,8 +13,10 @@ foreach($css_files as $file): ?>
 </head>
 <body>
 	<div>
-		<!--a href='<?php echo site_url('examples/books')?>'>Книги</a-->
-	<h1>Каталог книг</h1>
+		<h3><a href='<?php echo site_url('examples/books')?>'>Каталог книг</a>&nbsp;&nbsp;
+		<a href='<?php echo site_url('examples/writers')?>'>Список авторов</a>&nbsp;&nbsp;
+		<a href='<?php echo site_url('examples/genres')?>'>Жанры произведений</a>
+		</h3>
 	</div>
 	<div style='height:20px;'></div>  
     <div>
